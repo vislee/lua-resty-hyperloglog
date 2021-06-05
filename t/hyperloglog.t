@@ -133,6 +133,7 @@ GET /t
                 h:insert("/hello/world" .. i)
             end
             ngx.print("count:", h:count())
+            h:close()
             ngx.exit(ngx.HTTP_OK)
         }
     }
@@ -178,6 +179,7 @@ GET /t
             if not ok then
                 ngx.log(ngx.ERR, "merge error.", err)
             end
+            h2:close()
             ngx.print(" merge_count:", h1:count())
             ngx.exit(ngx.HTTP_OK)
         }
