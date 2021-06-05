@@ -41,7 +41,7 @@ http {
 
         location / {
             access_by_lua_block {
-                h:add(ngx.var.uri)
+                h:insert(ngx.var.uri)
             }
 
             ...
